@@ -20,6 +20,7 @@
 @property (readonly, strong, nonatomic) NSString *firstName;
 @property (readonly, strong, nonatomic) NSString *lastName;
 @property (readonly, strong, nonatomic) NSNumber *recordId;
+@property (readonly, strong, nonatomic) NSDate *lastModified;
 @property (nonatomic, readonly, strong) NSArray *phones;
 
 @property (nonatomic, readonly) BOOL hasImage;

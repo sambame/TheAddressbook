@@ -48,10 +48,14 @@
     return result;
 }
 
+- (NSDate *) getRecordDate:(ABPropertyID) anID {
+    return CFBridgingRelease(ABRecordCopyValue(_record, anID));
+}
+
 - (NSArray *) valueLabelDictArrayForProperty: (ABPropertyID) anID
 {
 	CFTypeRef theProperty = ABRecordCopyValue(_record, anID);
-    int count = ABMultiValueGetCount(theProperty);
+    NSInteger count = ABMultiValueGetCount(theProperty);
    
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:count];
     
@@ -68,6 +72,10 @@
     
 	CFRelease(theProperty);
 	return result;
+}
+
+- (NSDate *) lastModified {
+    return [self getRecordDate:kABPersonModificationDateProperty];
 }
 
 - (NSNumber *) recordId {
