@@ -98,6 +98,10 @@
     return [self valueLabelDictArrayForProperty:kABPersonPhoneProperty];
 }
 
+- (NSDate *) birthday {
+    return [self getRecordDate:kABPersonBirthdayProperty];    
+}
+
 -(BOOL)hasImage {
     return ABPersonHasImageData(_record);
 }

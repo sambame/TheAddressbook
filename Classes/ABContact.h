@@ -22,7 +22,7 @@
 @property (readonly, strong, nonatomic) NSNumber *recordId;
 @property (readonly, strong, nonatomic) NSDate *lastModified;
 @property (nonatomic, readonly, strong) NSArray *phones;
-
+@property (readonly, strong, nonatomic) NSDate *birthday;
 @property (nonatomic, readonly) BOOL hasImage;
 
 @end
